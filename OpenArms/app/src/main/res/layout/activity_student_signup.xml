@@ -86,38 +86,15 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/studentHaveAccountTextView"
+        android:id="@+id/studentSignupLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
         android:layout_marginTop="24dp"
-        android:text="Already have an account?"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/studentSignUpButton"
-        app:layout_constraintVertical_bias="0.225" />
-
-    <TextView
-        android:id="@+id/studentGoToLoginButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Log In"
+        android:text="Already have an account? Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.086"
-        app:layout_constraintStart_toEndOf="@+id/studentHaveAccountTextView"
-        app:layout_constraintTop_toBottomOf="@+id/studentSignUpButton"
-        app:layout_constraintVertical_bias="0.365" />
-
-    <TextView
-        android:id="@+id/studentBackButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        app:layout_constraintBottom_toTopOf="@+id/studentSignUpNameTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.086"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.352" />
+        app:layout_constraintTop_toBottomOf="@+id/studentSignUpButton"
+        app:layout_constraintVertical_bias="0.236" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

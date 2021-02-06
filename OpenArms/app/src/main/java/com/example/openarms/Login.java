@@ -23,6 +23,11 @@ import com.google.firebase.firestore.Query;
 public class Login extends AppCompatActivity {
     private FirebaseAuth mAuth;
     String userType;
+    TextView email;
+    TextView password;
+    Button logIn;
+    TextView signupStudent;
+    TextView signupCounselor;
     private String userEmail;
     private String userPassword;
     private final String TAG = "Login: ";
@@ -32,11 +37,26 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         mAuth=FirebaseAuth.getInstance();
-        TextView email = findViewById(R.id.loginEmailInput);
-        TextView password = findViewById(R.id.loginPasswordInput);
-        Button logIn = findViewById(R.id.loginButton);
+        email = findViewById(R.id.loginEmailInput);
+        password = findViewById(R.id.loginPasswordInput);
+        logIn = findViewById(R.id.loginButton);
+        signupCounselor = findViewById(R.id.LoginCounselorSignup);
+        signupStudent = findViewById(R.id.LoginStudentSignup);
         userEmail = email.getText().toString();
         userPassword = password.getText().toString();
+
+        signupStudent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Login.this, StudentSignup.class));
+            }
+        });
+        signupCounselor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Login.this, CounselorSignup.class));
+            }
+        });
 
         //Function to Signin and on click listener for logIn button
         logIn.setOnClickListener(new View.OnClickListener() {
@@ -55,10 +75,10 @@ public class Login extends AppCompatActivity {
                                     Query counselorQuery = counselors.whereEqualTo("ID",user.getUid());
                                     if (studentQuery != null){
                                         userType="student";
-                                        updateUI();
+                                        updateUI(user);
                                     }else if (counselorQuery !=null){
                                         userType="counselor";
-                                        updateUI();
+                                        updateUI(user);
                                     }else{
                                         Toast.makeText(Login.this, "Could not find you as a student or counselor", Toast.LENGTH_LONG);
                                     }
@@ -70,20 +90,23 @@ public class Login extends AppCompatActivity {
 
     }
 
-
     @Override
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI();
+        updateUI(currentUser);
     }
 
-    public void updateUI(){
+    public void updateUI(FirebaseUser user){
+        if(user != null){
         if (userType.equals("student")){
             startActivity(new Intent(this, StudentHomePage.class));
         } else{
             startActivity(new Intent(this, CounselorHomePage.class));
+        }}
+        else{
+            Toast.makeText(Login.this, "You are not logged in.", Toast.LENGTH_LONG);
         }
 
     }

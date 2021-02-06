@@ -25,6 +25,11 @@ import java.util.Map;
 
 public class StudentSignup extends AppCompatActivity {
     private FirebaseAuth mAuth;
+    TextView email;
+    TextView pass;
+    TextView name;
+    TextView login;
+    Button signUp;
     Map<String, Object> userInfo = new HashMap<>();
     String userEmail;
     String userPass;
@@ -36,14 +41,23 @@ public class StudentSignup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_signup);
         mAuth = FirebaseAuth.getInstance();
-        TextView email = findViewById(R.id.studentSignupEmailTextView);
-        TextView pass = findViewById(R.id.studentSignupPasswordTextView);
-        TextView name = findViewById(R.id.studentSignUpNameTextView);
-        Button signUp = findViewById(R.id.studentSignUpButton);
+        email = findViewById(R.id.studentSignupEmailTextView);
+        pass = findViewById(R.id.studentSignupPasswordTextView);
+        name = findViewById(R.id.studentSignUpNameTextView);
+        signUp = findViewById(R.id.studentSignUpButton);
+        login = findViewById(R.id.studentSignupLogin);
+
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(StudentSignup.this, Login.class));
+            }
+        });
+
         userEmail=email.getText().toString();
         userName = name.getText().toString();
         userPass = pass.getText().toString();
-
         // On Click listener for sign up button and the sign up function for firebase
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
