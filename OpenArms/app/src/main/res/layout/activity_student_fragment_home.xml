@@ -7,32 +7,61 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="393dp"
-        android:layout_height="60dp"
-        android:text="Text with a Counselor"
+        android:id="@+id/studentHomeTextAIButton"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginBottom="52dp"
+        android:gravity="left|center_vertical"
+        android:text="Chat with your virtual assistant"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/studentHomeTextCounselorButton"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="368dp"
+        android:gravity="left|center_vertical"
+        android:text="Text with a Counselor"
+        app:cornerRadius="15dp"
+        app:icon="@android:drawable/sym_action_chat"
+        app:iconPadding="40dp"
+        app:iconSize="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="393dp"
-        android:layout_height="57dp"
+        android:id="@+id/studentHomeChatRoomButton"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="left|center_vertical"
         android:text="Chat Rooms"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:cornerRadius="15dp"
+        app:icon="@drawable/ic_baseline_groups_24"
+        app:iconPadding="40dp"
+        app:iconSize="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/studentHomeTextAIButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.421" />
+        app:layout_constraintTop_toBottomOf="@+id/studentHomeTextCounselorButton"
+        app:layout_constraintVertical_bias="0.272" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="393dp"
-        android:layout_height="52dp"
-        android:layout_marginBottom="76dp"
-        android:text="Chat with your virtual assistant"
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="333dp"
+        android:layout_height="320dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.116"
+        app:srcCompat="@drawable/home_background"
+        tools:srcCompat="@drawable/home_background" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
