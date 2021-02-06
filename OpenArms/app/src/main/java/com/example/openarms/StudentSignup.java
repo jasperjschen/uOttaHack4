@@ -55,13 +55,14 @@ public class StudentSignup extends AppCompatActivity {
             }
         });
 
-        userEmail=email.getText().toString();
-        userName = name.getText().toString();
-        userPass = pass.getText().toString();
+
         // On Click listener for sign up button and the sign up function for firebase
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                userEmail = email.getText().toString();
+                userName = name.getText().toString();
+                userPass = pass.getText().toString();
                 mAuth.createUserWithEmailAndPassword(userEmail, userPass)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
@@ -88,7 +89,7 @@ public class StudentSignup extends AppCompatActivity {
             }
     public void updateUI(FirebaseUser user){
         if (user != null) {
-            Toast.makeText(this, "You Signed In successfully!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "You Signed In Successfully!", Toast.LENGTH_LONG).show();
             startActivity(new Intent(this, StudentHomePage.class));
         }else{
             Toast.makeText(this, "Something went wrong please check your email and password", Toast.LENGTH_SHORT).show();
