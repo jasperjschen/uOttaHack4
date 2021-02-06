@@ -12,7 +12,7 @@
         <activity android:name=".ConsentPage"></activity>
         <activity android:name=".CounselorStudentChatPage" />
         <activity android:name=".AIChatPage" />
-        <activity android:name=".CounselorHomePage" />
+        <activity android:name=".CounselorMainPage" />
         <activity android:name=".StudentMainPage" />
         <activity android:name=".CounselorSignup" />
         <activity android:name=".StudentSignup" />

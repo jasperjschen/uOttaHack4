@@ -16,9 +16,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
 
 public class Login extends AppCompatActivity {
     private FirebaseAuth mAuth;
@@ -71,18 +71,27 @@ public class Login extends AppCompatActivity {
                                 if (task.isSuccessful()){
                                     Log.d(TAG,"signInWithCustomEmail:success");
                                     FirebaseUser user = mAuth.getCurrentUser();
-                                    db.collection("students").document(user.getUid());
-                                    Log.d("Counselor", counselorQuery);
-                                    Log.d("student", studentQuery);
-                                    if (studentQuery != null){
-                                        userType="student";
-                                        updateUI(user);
-                                    }else if (counselorQuery !=null){
-                                        userType="counselor";
-                                        updateUI(user);
-                                    }else{
-                                        Toast.makeText(Login.this, "Could not find you as a student or counselor", Toast.LENGTH_LONG);
-                                    }
+                                    DocumentReference docRef = db.collection("students").document(user.getUid());
+                                    docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                DocumentSnapshot document = task.getResult();
+                                                if (document.exists()) {
+                                                    Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                                                    userType="student";
+                                                    updateUI(user);
+                                                } else {
+                                                    Log.d(TAG, "No such document");
+                                                    userType="counselor";
+                                                    updateUI(user);
+                                                    Log.d(TAG,user.getUid());
+                                                }
+                                            } else {
+                                                Log.d(TAG, "get failed with ", task.getException());
+                                            }
+                                        }
+                                    });
                                 }
                             }
                         });
@@ -106,7 +115,7 @@ public class Login extends AppCompatActivity {
             else if (userType.equals("student")){
                 startActivity(new Intent(this, StudentMainPage.class));
             } else{
-                startActivity(new Intent(this, CounselorHomePage.class));
+                startActivity(new Intent(this, CounselorMainPage.class));
             }
         }
         else{

@@ -248,7 +248,7 @@ public class CounselorSignup extends AppCompatActivity {
     public  void  updateUI(FirebaseUser user){
         if (user != null){
             Toast.makeText(this, "You Signed In Successfully!",Toast.LENGTH_LONG).show();
-            startActivity(new Intent(this, CounselorHomePage.class));
+            startActivity(new Intent(this, CounselorMainPage.class));
         }else{
             Toast.makeText(this, "Something went wrong please check your entries.",Toast.LENGTH_LONG).show();
         }
