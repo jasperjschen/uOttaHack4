@@ -12,21 +12,21 @@
         android:layout_height="wrap_content"
         android:text="Button"
         tools:layout_editor_absoluteX="159dp"
-        tools:layout_editor_absoluteY="454dp" />
+        tools:layout_editor_absoluteY="574dp" />
 
     <TextView
         android:id="@+id/studentSignUpUsernameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="Name"
         tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="228dp" />
+        tools:layout_editor_absoluteY="148dp" />
 
     <TextView
         android:id="@+id/studentSignupEmailTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="Email"
         tools:layout_editor_absoluteX="176dp"
         tools:layout_editor_absoluteY="281dp" />
 
@@ -34,7 +34,35 @@
         android:id="@+id/studentSignupPasswordTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="Password"
         tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="356dp" />
+        tools:layout_editor_absoluteY="419dp" />
+
+    <EditText
+        android:id="@+id/studentSignupNameInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        tools:layout_editor_absoluteX="104dp"
+        tools:layout_editor_absoluteY="184dp" />
+
+    <EditText
+        android:id="@+id/studentSignupPasswordInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="454dp" />
+
+    <EditText
+        android:id="@+id/studentSignupEmailInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="104dp"
+        tools:layout_editor_absoluteY="331dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

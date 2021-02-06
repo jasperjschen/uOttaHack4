@@ -12,17 +12,17 @@
         android:id="@+id/loginEmailTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="180dp"
-        tools:layout_editor_absoluteY="270dp" />
+        android:text="Email"
+        tools:layout_editor_absoluteX="169dp"
+        tools:layout_editor_absoluteY="201dp" />
 
     <TextView
         android:id="@+id/loginPasswordTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="177dp"
-        tools:layout_editor_absoluteY="339dp" />
+        android:text="Password"
+        tools:layout_editor_absoluteX="174dp"
+        tools:layout_editor_absoluteY="298dp" />
 
     <Button
         android:id="@+id/loginButton"
@@ -31,5 +31,23 @@
         android:text="Button"
         tools:layout_editor_absoluteX="160dp"
         tools:layout_editor_absoluteY="435dp" />
+
+    <EditText
+        android:id="@+id/loginEmailInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="230dp" />
+
+    <EditText
+        android:id="@+id/loginPasswordInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="93dp"
+        tools:layout_editor_absoluteY="347dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
