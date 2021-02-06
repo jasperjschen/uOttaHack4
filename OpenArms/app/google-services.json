@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "566931614870",
+    "project_id": "openarms-af270",
+    "storage_bucket": "openarms-af270.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566931614870:android:7feeca7045d01167d526b7",
+        "android_client_info": {
+          "package_name": "com.uOttaHack4.OpenArms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "566931614870-t64m0d5vqfq83tiii71e5uc8l84caika.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBd5uHMsZMQpttwpKI9udEhstCES3e6Yws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "566931614870-t64m0d5vqfq83tiii71e5uc8l84caika.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
