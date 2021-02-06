@@ -8,49 +8,52 @@
 
     <Button
         android:id="@+id/studentHomeTextAIButton"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginBottom="52dp"
+        android:layout_width="400dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="104dp"
         android:gravity="left|center_vertical"
         android:text="Chat with your virtual assistant"
         app:cornerRadius="15dp"
+        app:icon="@drawable/ic_custom_robot"
+        app:iconPadding="70dp"
+        app:iconSize="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/studentHomeTextCounselorButton"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="368dp"
+        android:layout_width="400dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="372dp"
         android:gravity="left|center_vertical"
         android:text="Text with a Counselor"
         app:cornerRadius="15dp"
         app:icon="@android:drawable/sym_action_chat"
-        app:iconPadding="40dp"
+        app:iconPadding="70dp"
         app:iconSize="60dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/studentHomeChatRoomButton"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_width="400dp"
+        android:layout_height="80dp"
         android:gravity="left|center_vertical"
         android:text="Chat Rooms"
         app:cornerRadius="15dp"
         app:icon="@drawable/ic_baseline_groups_24"
-        app:iconPadding="40dp"
+        app:iconPadding="70dp"
         app:iconSize="60dp"
         app:layout_constraintBottom_toTopOf="@+id/studentHomeTextAIButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/studentHomeTextCounselorButton"
-        app:layout_constraintVertical_bias="0.272" />
+        app:layout_constraintVertical_bias="0.466" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -60,7 +63,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.116"
+        app:layout_constraintVertical_bias="0.038"
         app:srcCompat="@drawable/home_background"
         tools:srcCompat="@drawable/home_background" />
 
