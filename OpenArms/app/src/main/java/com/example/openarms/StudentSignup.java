@@ -40,9 +40,9 @@ public class StudentSignup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_signup);
         mAuth = FirebaseAuth.getInstance();
-        email = findViewById(R.id.studentSignupEmailTextView);
-        pass = findViewById(R.id.studentSignupPasswordTextView);
-        name = findViewById(R.id.studentSignUpNameTextView);
+        email = findViewById(R.id.studentSignupEmailInput);
+        pass = findViewById(R.id.studentSignupPasswordInput);
+        name = findViewById(R.id.studentSignupNameInput);
         signUp = findViewById(R.id.studentSignUpButton);
         login = findViewById(R.id.studentSignupLogin);
 
@@ -73,7 +73,7 @@ public class StudentSignup extends AppCompatActivity {
                                     UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                                             .setDisplayName(userName).build();
                                     user.updateProfile(profileUpdates);
-                                    userInfo.put("Name", user.getDisplayName());
+                                    userInfo.put("Name", userName);
                                     userInfo.put("Email", user.getEmail());
                                     userInfo.put("ID", user.getUid());
                                     db.collection("students").document(user.getUid())

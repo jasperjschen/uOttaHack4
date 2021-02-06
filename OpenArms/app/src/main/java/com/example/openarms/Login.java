@@ -42,8 +42,7 @@ public class Login extends AppCompatActivity {
         logIn = findViewById(R.id.loginButton);
         signupCounselor = findViewById(R.id.LoginCounselorSignup);
         signupStudent = findViewById(R.id.LoginStudentSignup);
-        userEmail = email.getText().toString();
-        userPassword = password.getText().toString();
+
 
         signupStudent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,8 +59,11 @@ public class Login extends AppCompatActivity {
 
         //Function to Signin and on click listener for logIn button
         logIn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+                userEmail = email.getText().toString();
+                userPassword = password.getText().toString();
                 mAuth.signInWithEmailAndPassword(userEmail,userPassword)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
@@ -69,10 +71,9 @@ public class Login extends AppCompatActivity {
                                 if (task.isSuccessful()){
                                     Log.d(TAG,"signInWithCustomEmail:success");
                                     FirebaseUser user = mAuth.getCurrentUser();
-                                    CollectionReference students = db.collection("students");
-                                    CollectionReference counselors = db.collection("counselors");
-                                    Query studentQuery = students.whereEqualTo("ID", user.getUid());
-                                    Query counselorQuery = counselors.whereEqualTo("ID",user.getUid());
+                                    db.collection("students").document(user.getUid());
+                                    Log.d("Counselor", counselorQuery);
+                                    Log.d("student", studentQuery);
                                     if (studentQuery != null){
                                         userType="student";
                                         updateUI(user);
@@ -99,12 +100,15 @@ public class Login extends AppCompatActivity {
     }
 
     public void updateUI(FirebaseUser user){
+
         if(user != null){
-        if (userType.equals("student")){
-            startActivity(new Intent(this, StudentMainPage.class));
-        } else{
-            startActivity(new Intent(this, CounselorHomePage.class));
-        }}
+            if(userType==null){}
+            else if (userType.equals("student")){
+                startActivity(new Intent(this, StudentMainPage.class));
+            } else{
+                startActivity(new Intent(this, CounselorHomePage.class));
+            }
+        }
         else{
             Toast.makeText(Login.this, "You are not logged in.", Toast.LENGTH_LONG);
         }

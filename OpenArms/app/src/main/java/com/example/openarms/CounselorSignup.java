@@ -228,7 +228,7 @@ public class CounselorSignup extends AppCompatActivity {
                                         UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                                                 .setDisplayName(userName).build();
                                         user.updateProfile(profileUpdates);
-                                        userInfo.put("Name", user.getDisplayName());
+                                        userInfo.put("Name", userName);
                                         userInfo.put("Email", user.getEmail());
                                         userInfo.put("ID", user.getUid());
                                         userInfo.put("Specialization", userSpecialty);

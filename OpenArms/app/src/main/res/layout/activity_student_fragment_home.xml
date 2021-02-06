@@ -10,7 +10,6 @@
         android:id="@+id/button"
         android:layout_width="393dp"
         android:layout_height="60dp"
-        android:layout_marginTop="476dp"
         android:text="Text with a Counselor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
