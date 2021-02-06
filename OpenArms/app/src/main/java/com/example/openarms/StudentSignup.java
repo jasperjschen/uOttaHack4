@@ -17,7 +17,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -90,7 +89,7 @@ public class StudentSignup extends AppCompatActivity {
     public void updateUI(FirebaseUser user){
         if (user != null) {
             Toast.makeText(this, "You Signed In Successfully!", Toast.LENGTH_LONG).show();
-            startActivity(new Intent(this, StudentHomePage.class));
+            startActivity(new Intent(this, StudentMainPage.class));
         }else{
             Toast.makeText(this, "Something went wrong please check your email and password", Toast.LENGTH_SHORT).show();
         }

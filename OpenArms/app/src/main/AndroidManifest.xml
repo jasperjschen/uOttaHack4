@@ -13,7 +13,7 @@
         <activity android:name=".CounselorStudentChatPage" />
         <activity android:name=".AIChatPage" />
         <activity android:name=".CounselorHomePage" />
-        <activity android:name=".StudentHomePage" />
+        <activity android:name=".StudentMainPage" />
         <activity android:name=".CounselorSignup" />
         <activity android:name=".StudentSignup" />
         <activity android:name=".Login">

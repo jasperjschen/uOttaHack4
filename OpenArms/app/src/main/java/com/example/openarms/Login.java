@@ -101,7 +101,7 @@ public class Login extends AppCompatActivity {
     public void updateUI(FirebaseUser user){
         if(user != null){
         if (userType.equals("student")){
-            startActivity(new Intent(this, StudentHomePage.class));
+            startActivity(new Intent(this, StudentMainPage.class));
         } else{
             startActivity(new Intent(this, CounselorHomePage.class));
         }}
