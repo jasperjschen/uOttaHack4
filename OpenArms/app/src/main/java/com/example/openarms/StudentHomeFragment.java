@@ -22,6 +22,13 @@ public class StudentHomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view= inflater.inflate(R.layout.activity_student_fragment_home, container, false);
         Button textWithCounselor = (Button) view.findViewById(R.id.studentHomeTextCounselorButton);
+        Button textWithAI = (Button) view.findViewById(R.id.studentHomeTextAIButton);
+        textWithAI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), AIChatPage.class));
+            }
+        });
         textWithCounselor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
