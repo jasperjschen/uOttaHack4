@@ -14,9 +14,9 @@ public class CounselorMainPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_main_page);
+        setContentView(R.layout.activity_counselor_main_page);
         bottomNav = findViewById(R.id.bottom_navigation);
-        Fragment initialSelectedFragment = new StudentHomeFragment();
+        Fragment initialSelectedFragment = new CounselorHomeFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container1,
                 initialSelectedFragment).commit();
         bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

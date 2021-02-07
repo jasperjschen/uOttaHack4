@@ -14,7 +14,7 @@ public class CounselorCommunityFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.activity_student_fragment_community, container, false);
+        return inflater.inflate(R.layout.activity_counselor_fragment_community, container, false);
     }
 }
 

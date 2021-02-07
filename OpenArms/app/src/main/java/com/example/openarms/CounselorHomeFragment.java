@@ -17,8 +17,8 @@ public class CounselorHomeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view= inflater.inflate(R.layout.activity_student_fragment_home, container, false);
-        Button textWithCounselor = (Button) view.findViewById(R.id.studentHomeTextCounselorButton);
+        view= inflater.inflate(R.layout.activity_counselor_fragment_home, container, false);
+        Button textWithCounselor = (Button) view.findViewById(R.id.counselorHomeTextCounselorButton);
         textWithCounselor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
