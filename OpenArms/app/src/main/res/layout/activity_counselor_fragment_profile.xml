@@ -7,58 +7,21 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/counselorSignupLanguageSelect2"
-        android:layout_width="226dp"
-        android:layout_height="34dp"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="364dp"
-        android:layout_marginBottom="32dp"
-        android:background="@android:drawable/editbox_background"
-        android:drawableEnd="@android:drawable/arrow_down_float"
-        android:drawablePadding="16dp"
-        android:hint="   Select Languages"
-        app:layout_constraintBottom_toTopOf="@+id/counselorSignupSpecializationSelect"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.681"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/counselorSignupSpecializationSelect2"
-        android:layout_width="225dp"
-        android:layout_height="29dp"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="416dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:drawable/editbox_background"
-        android:drawableEnd="@android:drawable/arrow_down_float"
-        android:drawablePadding="16dp"
-        android:hint="   Select Specialization"
-        app:layout_constraintBottom_toTopOf="@+id/counselorSignupButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.677"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.911" />
-
-    <TextView
-        android:id="@+id/studentProfileEmailLabelTextView"
+        android:id="@+id/counselorProfileEmailLabelTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginBottom="64dp"
         android:text="Email"
-        app:layout_constraintEnd_toStartOf="@+id/studentProfileEmailInput"
-        app:layout_constraintHorizontal_bias="0.458"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/studentProfileLocationTextView" />
+        app:layout_constraintBottom_toTopOf="@+id/counselorProfilePasswordLabelTextView"
+        app:layout_constraintEnd_toStartOf="@+id/counselorProfilePasswordInput"
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/profileLogOutButton"
+        android:id="@+id/counselorProfileLogOutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="92dp"
+        android:layout_marginBottom="88dp"
         android:text="Log Out"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,112 +29,90 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/studentProfileHeaderTextView"
+        android:id="@+id/counselorProfileHeaderTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Profile"
         android:textSize="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/studentProfileImageView"
+        app:layout_constraintBottom_toTopOf="@+id/counselorProfileImageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.584" />
+        app:layout_constraintVertical_bias="0.85" />
 
     <ImageView
-        android:id="@+id/studentProfileImageView"
+        android:id="@+id/counselorProfileImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/counselorProfileNameTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="88dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/studentProfileNameTextView"
+        android:id="@+id/counselorProfileNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:text="John Smith"
-        app:layout_constraintBottom_toTopOf="@+id/studentProfileLocationTextView"
-        app:layout_constraintTop_toBottomOf="@+id/studentProfileImageView"
-        tools:layout_editor_absoluteX="170dp" />
-
-    <TextView
-        android:id="@+id/studentProfileLocationTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Toronto, ON"
+        app:layout_constraintBottom_toTopOf="@+id/counselorProfileLocationTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="284dp" />
-
-    <EditText
-        android:id="@+id/studentProfileDOBInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:ems="10"
-        android:inputType="date"
-        app:layout_constraintBottom_toTopOf="@+id/studentProfileSubmitChangeButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/studentProfilePasswordInput"
-        app:layout_constraintVertical_bias="0.53" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/studentProfileDOBLabelTextView"
+        android:id="@+id/counselorProfileLocationTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Birthday"
-        app:layout_constraintBottom_toTopOf="@+id/profileLogOutButton"
-        app:layout_constraintEnd_toStartOf="@+id/studentProfileDOBInput"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/studentProfilePasswordLabelTextView"
-        app:layout_constraintVertical_bias="0.331" />
+        android:layout_marginBottom="52dp"
+        android:text="Toronto, ON"
+        app:layout_constraintBottom_toTopOf="@+id/counselorProfileEmailLabelTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/studentProfilePasswordInput"
+        android:id="@+id/counselorProfilePasswordInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="40dp"
+        android:layout_marginBottom="44dp"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/studentProfileEmailInput" />
+        app:layout_constraintBottom_toTopOf="@+id/counselorProfileEmailInput"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/studentProfilePasswordLabelTextView"
+        android:id="@+id/counselorProfilePasswordLabelTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginBottom="60dp"
         android:text="Password"
-        app:layout_constraintEnd_toStartOf="@+id/studentProfilePasswordInput"
-        app:layout_constraintHorizontal_bias="0.57"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/studentProfileEmailLabelTextView" />
+        app:layout_constraintBottom_toTopOf="@+id/counslorProfileSubmitChangeButton"
+        app:layout_constraintEnd_toStartOf="@+id/counselorProfileEmailInput"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/studentProfileEmailInput"
+        android:id="@+id/counselorProfileEmailInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="40dp"
+        android:layout_marginBottom="44dp"
         android:ems="10"
         android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/studentProfileLocationTextView" />
+        app:layout_constraintBottom_toTopOf="@+id/counslorProfileSubmitChangeButton"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/studentProfileSubmitChangeButton"
+        android:id="@+id/counslorProfileSubmitChangeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:text="Submit Changes"
-        app:layout_constraintBottom_toTopOf="@+id/profileLogOutButton"
+        app:layout_constraintBottom_toTopOf="@+id/counselorProfileLogOutButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />

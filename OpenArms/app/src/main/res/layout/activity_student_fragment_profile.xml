@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/profileLogOutButton"
+        android:id="@+id/studentProfileLogOutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="92dp"
@@ -63,35 +63,10 @@
         app:layout_constraintVertical_bias="0.046" />
 
     <EditText
-        android:id="@+id/studentProfileDOBInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:ems="10"
-        android:inputType="date"
-        app:layout_constraintBottom_toTopOf="@+id/studentProfileSubmitChangeButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/studentProfilePasswordInput"
-        app:layout_constraintVertical_bias="0.53" />
-
-    <TextView
-        android:id="@+id/studentProfileDOBLabelTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Birthday"
-        app:layout_constraintBottom_toTopOf="@+id/profileLogOutButton"
-        app:layout_constraintEnd_toStartOf="@+id/studentProfileDOBInput"
-        app:layout_constraintHorizontal_bias="0.404"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/studentProfilePasswordLabelTextView"
-        app:layout_constraintVertical_bias="0.311" />
-
-    <EditText
         android:id="@+id/studentProfilePasswordInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="40dp"
         android:ems="10"
         android:inputType="textPassword"
@@ -103,10 +78,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="72dp"
         android:text="Password"
         app:layout_constraintEnd_toStartOf="@+id/studentProfilePasswordInput"
-        app:layout_constraintHorizontal_bias="0.452"
+        app:layout_constraintHorizontal_bias="0.431"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/studentProfileEmailLabelTextView" />
 
@@ -139,7 +114,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:text="Submit Changes"
-        app:layout_constraintBottom_toTopOf="@+id/profileLogOutButton"
+        app:layout_constraintBottom_toTopOf="@+id/studentProfileLogOutButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
