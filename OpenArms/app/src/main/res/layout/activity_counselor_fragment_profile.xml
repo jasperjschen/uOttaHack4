@@ -7,12 +7,40 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/counselorProfileEmailTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email"
-        tools:layout_editor_absoluteX="73dp"
-        tools:layout_editor_absoluteY="213dp" />
+        android:id="@+id/counselorSignupLanguageSelect2"
+        android:layout_width="226dp"
+        android:layout_height="34dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="308dp"
+        android:layout_marginBottom="32dp"
+        android:background="@android:drawable/editbox_background"
+        android:drawableEnd="@android:drawable/arrow_down_float"
+        android:drawablePadding="16dp"
+        android:hint="   Select Languages"
+        app:layout_constraintBottom_toTopOf="@+id/counselorSignupSpecializationSelect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.616"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/counselorSignupSpecializationSelect2"
+        android:layout_width="225dp"
+        android:layout_height="29dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="416dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:drawable/editbox_background"
+        android:drawableEnd="@android:drawable/arrow_down_float"
+        android:drawablePadding="16dp"
+        android:hint="   Select Specialization"
+        app:layout_constraintBottom_toTopOf="@+id/counselorSignupButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.677"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.911" />
 
     <Button
         android:id="@+id/counselorProfileLogOutButton"
