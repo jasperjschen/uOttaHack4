@@ -2,16 +2,19 @@ package com.example.openarms;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.ActionMenuItemView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.format.Formatter;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +25,11 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONArrayRequestListener;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -35,6 +43,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -93,6 +104,8 @@ public class AIChatPage extends AppCompatActivity {
         mLinearLayoutManager = new LinearLayoutManager(this);
         mLinearLayoutManager.setStackFromEnd(true);
         mMessageRecyclerView.setLayoutManager(mLinearLayoutManager);
+
+        AndroidNetworking.initialize(getApplicationContext());
 
         // New child entries
         mFirebaseDatabaseReference = FirebaseDatabase.getInstance().getReference();
@@ -222,8 +235,47 @@ public class AIChatPage extends AppCompatActivity {
                         null /* no image */);
                 //mFirebaseDatabaseReference.child(user.getUid())
                 //.push().setValue(friendlyMessage);
+
                 mFirebaseDatabaseReference.child(MESSAGES_CHILD)
                         .push().setValue(friendlyMessage);
+
+                JSONObject jsonObject = new JSONObject();
+                try {
+                    jsonObject.put("message", mMessageEditText.getText().toString());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                Log.d("", jsonObject.toString());
+                String ipAddress = "http://" + "" + "/predict";
+                AndroidNetworking.post(ipAddress)
+                        .addJSONObjectBody(jsonObject) // posting json
+                        .setTag("AI Message")
+                        .setPriority(Priority.MEDIUM)
+                        .build()
+                        .getAsJSONObject(new JSONObjectRequestListener() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                try {
+                                    String message = response.getString("message");
+
+                                    FriendlyMessage friendlyMessageAI = new
+                                            FriendlyMessage(message,
+                                            "OpenArms AI",
+                                            mPhotoUrl,
+                                            null /* no image */);
+                                    mFirebaseDatabaseReference.child(MESSAGES_CHILD)
+                                            .push().setValue(friendlyMessageAI);
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                            @Override
+                            public void onError(ANError error) {
+                                // handle error
+                                Log.d("", error.toString());
+                            }
+                        });
                 mMessageEditText.setText("");
             }
         });

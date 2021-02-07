@@ -53,6 +53,10 @@ dependencies {
     // Java language implementation
     implementation "androidx.fragment:fragment:$fragment_version"
 
+    //REST API implementation
+    implementation "com.amitshekhar.android:android-networking:1.0.2"
+
+
 
 
 }
