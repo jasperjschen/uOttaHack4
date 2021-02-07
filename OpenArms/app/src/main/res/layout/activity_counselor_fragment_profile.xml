@@ -74,14 +74,14 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/counselorProfilePasswordInput"
+        android:id="@+id/counselorProfileEmailInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="44dp"
         android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/counselorProfileEmailInput"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/counselorProfilePasswordInput"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
@@ -96,13 +96,13 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/counselorProfileEmailInput"
+        android:id="@+id/counselorProfilePasswordInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="44dp"
         android:ems="10"
-        android:inputType="textEmailAddress"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/counselorProfileSubmitChangeButton"
         app:layout_constraintEnd_toEndOf="parent" />
 
