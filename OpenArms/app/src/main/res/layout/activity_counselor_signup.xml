@@ -10,12 +10,11 @@
         android:id="@+id/counselorSignupButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
         android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/counselorSignupHaveAccountTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.86" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/counselorSignupNameTextView"
@@ -32,7 +31,7 @@
         android:id="@+id/counselorSignupNameInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="32dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/counselorSignupEmailTextView"
@@ -44,7 +43,7 @@
         android:id="@+id/counselorSignupPasswordTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="12dp"
         android:text="Password"
         app:layout_constraintBottom_toTopOf="@+id/counselorSignupPasswordInput"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,18 +54,17 @@
         android:id="@+id/counselorSignupEmailTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="12dp"
         android:text="Email"
         app:layout_constraintBottom_toTopOf="@+id/counselorSignupEmailInput"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/counselorSignupPasswordInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="36dp"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/counselorSignupLanguageSelect"
@@ -91,44 +89,38 @@
         android:layout_width="226dp"
         android:layout_height="34dp"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="28dp"
         android:background="@android:drawable/editbox_background"
         android:drawableEnd="@android:drawable/arrow_down_float"
         android:drawablePadding="16dp"
         android:hint="   Select Languages"
         app:layout_constraintBottom_toTopOf="@+id/counselorSignupSpecializationSelect"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/counselorSignupSpecializationSelect"
         android:layout_width="225dp"
         android:layout_height="29dp"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="32dp"
         android:background="@android:drawable/editbox_background"
         android:drawableEnd="@android:drawable/arrow_down_float"
         android:drawablePadding="16dp"
         android:hint="   Select Specialization"
         app:layout_constraintBottom_toTopOf="@+id/counselorSignupButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.911" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/counselorSignupHaveAccountTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginBottom="80dp"
         android:text="Already have an account? Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/counselorSignupButton"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
