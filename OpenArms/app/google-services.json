@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:566931614870:android:7feeca7045d01167d526b7",
+        "mobilesdk_app_id": "1:566931614870:android:07bd19b875805d3fd526b7",
         "android_client_info": {
-          "package_name": "com.uOttaHack4.OpenArms"
+          "package_name": "com.example.openarms"
         }
       },
       "oauth_client": [
